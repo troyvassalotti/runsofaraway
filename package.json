@@ -1,7 +1,9 @@
 {
   "type": "module",
   "name": "@troyv/runsofaraway",
-  "bin": "runsofaraway.js",
+  "bin": {
+    "runsofaraway": "runsofaraway.js"
+  },
   "version": "1.0.0",
   "main": "runsofaraway.js",
   "scripts": {
