@@ -4,10 +4,14 @@ import { Command } from "commander";
 import Eleventy from "@11ty/eleventy";
 import pkg from "./package.json" with { type: "json" };
 import { cwd } from "node:process";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const program = new Command();
-const elev = new Eleventy("./", resolve(cwd(), "_site"));
+const elev = new Eleventy(resolve(__dirname), resolve(cwd(), "_site"), {
+  configPath: resolve(__dirname, "eleventy.config.js"),
+});
 
 program.name(pkg.name).description(pkg.description).version(pkg.version);
 
