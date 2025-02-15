@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "@troyv/runsofaraway",
+  "bin": "runsofaraway.js",
+  "version": "1.0.0",
+  "main": "runsofaraway.js",
+  "scripts": {
+    "build": "npx runsofaraway",
+    "dev": "npx runsofaraway serve",
+    "start": "npm run dev"
+  },
+  "license": "MIT",
+  "description": "View GPX files on a map",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "commander": "^13.1.0",
+    "teddy": "^0.6.21",
+    "xml2js": "^0.6.2"
+  }
+}

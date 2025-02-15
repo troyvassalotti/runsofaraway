@@ -1,0 +1,122 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+@import "https://unpkg.com/open-props/buttons.min.css";
+
+[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: var(--size-fluid-4) 1fr var(--size-fluid-4);
+  grid-template-rows: var(--size-fluid-2) 1fr var(--size-fluid-2);
+}
+
+body > * {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+[flow] > * + * {
+  margin-block-start: 1em;
+}
+
+[flow-md] > * + * {
+  margin-block-start: var(--size-fluid-3);
+}
+
+.site-header :is(ol, ul) {
+  display: flex;
+}
+
+json-viewer {
+  display: block;
+}
+
+.hide-by-default {
+  display: none;
+}
+
+::part(object) {
+  padding: var(--size-4);
+}
+
+.grid {
+  --grid-layout-gap: var(--size-fluid-4);
+  --grid-column-count: 4;
+  --grid-item--min-width: 150px;
+
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
+
+  display: grid;
+  gap: var(--grid-layout-gap);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+
+  &[grid-columns="2"] {
+    --grid-column-count: 2;
+  }
+
+  &[grid-columns="3"] {
+    --grid-column-count: 3;
+  }
+
+  &[grid-columns="5"] {
+    --grid-column-count: 5;
+  }
+
+  &[grid-columns*="auto"] {
+    grid-template-columns: repeat(
+      var(--fluid-type),
+      minmax(var(--grid-item--min-width), 1fr)
+    );
+  }
+
+  &[grid-columns="auto-fill"] {
+    --fluid-type: auto-fill;
+  }
+
+  &[grid-columns="auto-fit"] {
+    --fluid-type: auto-fit;
+  }
+}
+
+button-group {
+  display: flex;
+  gap: var(--size-3);
+}
+
+.flex {
+  display: flex;
+  gap: var(--size-fluid-4);
+}
+
+[wrap] {
+  flex-wrap: wrap;
+}
+
+[center] {
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  align-items: center;
+  border: 1px solid var(--surface-3);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-3);
+  display: flex;
+  flex-basis: var(--size-content-1);
+  flex-direction: column;
+  gap: var(--size-2);
+  justify-content: space-between;
+  padding: var(--size-4);
+}
