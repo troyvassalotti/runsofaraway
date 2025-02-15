@@ -16,6 +16,7 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "commander": "^13.1.0",
+    "common-tags": "^1.8.2",
     "teddy": "^0.6.21",
     "xml2js": "^0.6.2"
   }

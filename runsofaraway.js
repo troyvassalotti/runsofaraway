@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const program = new Command();
-const elev = new Eleventy(resolve(__dirname, "src"), resolve(cwd(), "_site"), {
+const elev = new Eleventy(resolve(__dirname), resolve(cwd(), "_site"), {
   configPath: resolve(__dirname, "eleventy.config.js"),
 });
 
