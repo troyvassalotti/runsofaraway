@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { parseStringPromise } from "xml2js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const tracksDir = resolve(cwd(), "tracks");
+const tracksDir = resolve(cwd());
 const staticDir = resolve(__dirname, "static");
 
 async function trackCompilation(track) {
