@@ -7,9 +7,7 @@ import { cwd } from "node:process";
 import { resolve } from "node:path";
 
 const program = new Command();
-const elev = new Eleventy("./", resolve(cwd(), "_site"), {
-  configPath: "./eleventy.config.js",
-});
+const elev = new Eleventy("./", resolve(cwd(), "_site"));
 
 program.name(pkg.name).description(pkg.description).version(pkg.version);
 
