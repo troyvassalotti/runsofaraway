@@ -6,7 +6,7 @@ import { cwd } from "node:process";
 import { resolve } from "node:path";
 import { parseStringPromise } from "xml2js";
 
-const tracksDir = resolve(cwd());
+const tracksDir = resolve(cwd(), "tracks");
 
 async function trackCompilation(track) {
   const contents = await readFile(resolve(tracksDir, track), "utf8");

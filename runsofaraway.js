@@ -3,9 +3,13 @@
 import { Command } from "commander";
 import Eleventy from "@11ty/eleventy";
 import pkg from "./package.json" with { type: "json" };
+import { cwd } from "node:process";
+import { resolve } from "node:path";
 
 const program = new Command();
-const elev = new Eleventy();
+const elev = new Eleventy("./", resolve(cwd(), "_site"), {
+  configPath: "./eleventy.config.js",
+});
 
 program.name(pkg.name).description(pkg.description).version(pkg.version);
 
