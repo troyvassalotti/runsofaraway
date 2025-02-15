@@ -3,9 +3,11 @@ import teddy from "teddy";
 import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { cwd } from "node:process";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { parseStringPromise } from "xml2js";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const tracksDir = resolve(cwd());
 
 async function trackCompilation(track) {
@@ -84,6 +86,6 @@ export const config = {
   htmlTemplateEngine: "teddy",
   markdownTemplateEngine: "teddy",
   dir: {
-    input: "src",
+    input: resolve(__dirname, "src"),
   },
 };
