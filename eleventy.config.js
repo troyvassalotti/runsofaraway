@@ -10,6 +10,8 @@ import { parseStringPromise } from "xml2js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const tracksDir = resolve(cwd());
+// use this for testing
+// const tracksDir = resolve(cwd(), "tracks");
 const staticDir = resolve(__dirname, "static");
 
 async function trackCompilation(track) {
